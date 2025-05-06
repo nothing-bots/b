@@ -15,9 +15,9 @@ game_chat_id = None
 last_message_id = dict()  # Key : id of player, value: last message id
 
 # --- CONSTANTS --- #
-BOT_TOKEN = "416682801:AAHygzvxHclVevhrwIufoUuNCAgJueh2GpI"
-REGISTRATION_TIME = 60  # In seconds
-REQUIRED_PLAYERS = 1
+BOT_TOKEN = "7652563058:AAGirGKSQlIPmr1C94z3v62mV8FKTZxRM2k"
+REGISTRATION_TIME = 80  # In seconds
+REQUIRED_PLAYERS = 4
 LEADERS_INNOCENTS = ['detective']
 SPECIAL_INNOCENTS = ['doctor', 'prostitute']
 SPECIAL_MAFIOSI = ['godfather']
@@ -261,7 +261,7 @@ def registration_command(bot, update):
         bot.send_message(chat_id=update.message.chat_id, text='And may the odds be ever in your favor')
         registration_state = True
 
-        keyboard = [[InlineKeyboardButton('Register!', url="https://t.me/goodgoosebot?start=Register")]]
+        keyboard = [[InlineKeyboardButton('Register!', url="https://t.me/RunaMusicBot?start=Register")]]
         msg_markup = InlineKeyboardMarkup(keyboard)
 
         reg_message_id = update.message.message_id + 2
@@ -330,7 +330,7 @@ def reg_player_command(bot, update):
         last_message_id[new_user.ID] = update.message.message_id
         used.append(new_user.ID)
 
-        keyboard = [[InlineKeyboardButton('Register!', url="https://t.me/goodgoosebot?start=Register")]]
+        keyboard = [[InlineKeyboardButton('Register!', url="https://t.me/runaMusicBot?start=Register")]]
         msg_markup = InlineKeyboardMarkup(keyboard)
 
         bot.edit_message_text(chat_id=game_chat_id, message_id=reg_message_id,
